@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>uz.uzinfocompayment</groupId>
+        <artifactId>starter-parent</artifactId>
+        <version>1.0.12</version>
+        <relativePath/>
+    </parent>
+
+
+    <artifactId>spring-starter</artifactId>
+    <version>1.0.44</version>
+    <name>PAY Spring starter</name>
+    <description>Custom Spring Boot Starter For Uzinfocom Payment System</description>
+    <packaging>jar</packaging>
+
+    <!--    To deploy spring-starter into nexus-->
+    <distributionManagement>
+        <repository>
+            <id>pay-nexus</id>
+            <url>http://192.168.25.54:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>pay-nexus</id>
+            <url>http://192.168.25.54:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <profiles>
+        <!-- Production Environment -->
+        <profile>
+            <id>prod</id>
+            <distributionManagement>
+                <repository>
+                    <id>pay-nexus</id>
+                    <url>http://172.16.85.7:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>pay-nexus</id>
+                    <url>http://172.16.85.7:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+</project>

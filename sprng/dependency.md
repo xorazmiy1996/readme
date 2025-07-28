@@ -92,22 +92,55 @@ Xatolarga yo'l qo'ymaslik uchun:
 4. Noto'g'ri dependencylar uchun `mvn dependency:analyze` buyrug'idan foydalaning
 
 
+## 2. Build qilish nima?
+
+---
+
+> Build qilish (inglizcha: "building") — bu dasturchi tomonidan yozilgan kodni ishlaydigan dasturga (yoki boshqa formatga) aylantirish jarayoni. Bu jarayon bir necha bosqichlarni o'z ichiga oladi
+
+1. Build nima Va nima uchun kerak?
+
+> Dastur yozishda biz .java (Java), .kt (Kotlin), .py (Python) kabi fayllarda kod yozamiz. Lekin kompyuter bu kodni to'g'ridan-to'g'ri tushunmaydi. Shuning uchun uni mashina tushunadigan formatga o'tkazish kerak. Ana shu jarayon build qilish deb ataladi.
 
 
+- **Kompilyatsiya** (`Compile`) – Koddagi xatolarni tekshirish va bytecode (`.class`) yaratish
+- **Paketlash** (`Packaging`) – Barcha fayllarni bitta (`.jar`, `.war`, `.exe`) formatga keltirish
+- **Testlash** (`Testing`) – Dasturni sinab ko'rish
+- **Dependencylarni Birlashtirish** – Tashqi kutubxonalarni loyihaga ulas
 
+`Maven` bilan `Build` Qilish (Eng Ko'p Ishlatiladi)
 
+```bash
+  mvn clean install
+```
+Bu buyruq quyidagi bosqichlarni bajartiradi:
+1. clean – Avvalgi build fayllarini tozalash (target/ papkasini o'chirish)
 
+2. compile – Java kodini .class fayllarga aylantirish
 
+3. test – Testlarni ishga tushirish (src/test/ dagi testlar)
 
+4. package – .jar yoki .war faylini yaratish
 
+5. install – Yaratilgan .jar ni lokal Maven repositoryga saqlash
 
+Build Qilingandan Keyin Nima Bo'ladi?
 
+Build tugagandan so'ng, loyiha `target/` papkasida quyidagi fayllar paydo bo'ladi:
 
+```text
+target/
+├── my-app.jar          ← Ishlatish mumkin bo'lgan asosiy jar fayl
+├── classes/            ← Kompilyatsiya qilingan .class fayllar
+├── generated-sources/  ← Avtomatik yaratilgan kodlar
+└── surefire-reports/   ← Test natijalari
+```
 
+Agar `build` jarayonida xatolik yuzaga kelsa:
 
-
-
-
+- **Kodni tekshirish** – Sintaksis xatolari bo'lishi mumkin
+- **Dependencylarni yangilash** – `mvn clean install -U`
+- **Testlarni o'tkazib yuborish** – `mvn install -DskipTests`
 
 
 

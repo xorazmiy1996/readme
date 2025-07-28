@@ -168,7 +168,7 @@ Microservis loyihalarida ikkita darajali parent bog'lanish - bu kuchli struktura
     ` Birinchi daraja: Spring Boot Parent`
 
     ```xml
-    <!-- Birinchi daraja parent: spring-boot-starter-parent -->
+    <!-- Birinchi daraja parent: spring-boot-starter.md-parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
