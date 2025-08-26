@@ -11,7 +11,8 @@ Nexus Repository - bu Sonatype tomonidan ishlab chiqilgan artefaktlar (dependenc
 
 2. Dastlabki sozlashlar
 
-   - Brauzerdan http://localhost:8081 manzilini oching
+   - Brauzerdan http://localho
+   - st:8081 manzilini oching
    - Dastlabki admin parolini topish:
      ```bash
      docker exec -it nexus cat /nexus-data/admin.password
